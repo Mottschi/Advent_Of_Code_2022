@@ -8,7 +8,7 @@ BLOCK_ACCIDENTAL_CHANGES = False
 
 if BLOCK_ACCIDENTAL_CHANGES:
 	import sys
-	sys.exit('Please be certain you want to overwrite all files with their default state before progressing')
+	sys.exit('Setup currently locked. Change BLOCK_ACCIDENTAL_CHANGES to False if you want to create a fresh setup.\nWARNING: This will overwrite your existing files, if you have any.')
 
 
 for i in range(1, 26):
