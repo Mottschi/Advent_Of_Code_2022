@@ -4,7 +4,7 @@ to help reduce the time spend on setting up each individual day and instead
 focus on actually solving the puzzle
 '''
 
-BLOCK_ACCIDENTAL_CHANGES = False
+BLOCK_ACCIDENTAL_CHANGES = True
 
 if BLOCK_ACCIDENTAL_CHANGES:
 	import sys
