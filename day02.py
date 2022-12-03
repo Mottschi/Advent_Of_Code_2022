@@ -40,7 +40,6 @@ game_score_part2 = {
 }
 
 def part_one(games):
-
 	score = 0
 	for elfs, mine in games:
 		elf = player_one[elfs]
@@ -50,7 +49,6 @@ def part_one(games):
 
 def part_two(games):
 	player_two = {
-
 		('rock', 'X'): 'scissors',
 		('rock', 'Y'): 'rock',
 		('rock', 'Z'): 'paper',
