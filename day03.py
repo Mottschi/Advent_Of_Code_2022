@@ -22,9 +22,8 @@ def part_one(data):
 		rucksacks.append((first_half, second_half))
 	priority_sum = 0
 	for c1, c2 in rucksacks:
-		common_item = c1 & c2
-		for char in common_item:
-			priority_sum += priority(char)
+		common_item = (c1 & c2).pop()
+		priority_sum += priority(common_item)
 	return priority_sum
 
 
