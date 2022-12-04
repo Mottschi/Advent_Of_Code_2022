@@ -1,6 +1,6 @@
 import time
 
-DEBUG = True
+DEBUG = 0
 
 if DEBUG:
 	FILE = 'day04_debug.txt'
@@ -15,15 +15,41 @@ def load():
 
 
 def parse(data):
-	return data
+	results=[]
+	data =  [line.split(',') for line in data]
+	for first, second in data:
+		first = first.split('-')
+		second = second.split('-')
+
+		first = int(first[0]), int(first[1])
+		second = int(second[0]), int(second[1])
+		results.append((first, second))
+
+	return results
+
+def contains(pair):
+	(first_start, first_end), (second_start, second_end) = pair
+	return (first_start <= second_start and first_end >= second_end) or (first_start >= second_start and first_end <= second_end)
+
+def overlaps(pair):
+	(first_start, first_end), (second_start, second_end) = pair
+	return first_start <= second_end and first_start >= second_start  or second_start <= first_end and second_start >= first_start
 
 
-def part_one(data):
-	pass
+def part_one(elfs):
+	count = 0
+	for pair in elfs:
+		if contains(pair):
+			count += 1
+	return count
 
 
-def part_two(data):
-	pass
+def part_two(elfs):
+	count = 0
+	for pair in elfs:
+		if overlaps(pair):
+			count += 1
+	return count
 
 
 if __name__ == '__main__':
