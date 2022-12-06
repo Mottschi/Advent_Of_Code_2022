@@ -1,6 +1,6 @@
 import time
 
-DEBUG = True
+DEBUG = 0
 
 if DEBUG:
 	FILE = 'day06_debug.txt'
@@ -15,15 +15,19 @@ def load():
 
 
 def parse(data):
-	return data
+	return data[0]
 
 
-def part_one(data):
-	pass
+def part_one(signals):
+	for i in range(4, len(signals)):
+		if len(set(signals[i - 4:i])) == 4:
+			return i
 
 
-def part_two(data):
-	pass
+def part_two(signals):
+	for i in range(14, len(signals)):
+		if len(set(signals[i - 14:i])) == 14:
+			return i
 
 
 if __name__ == '__main__':
